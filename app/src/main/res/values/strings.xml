@@ -2,7 +2,7 @@
     <string name="type">Choose user</string>
     <string name="app_name">TruckTrip</string>
     <string name="update">Update Data</string>
-    <string name="registrar">Registrar</string>
+    <string name="registrar">Registration</string>
     <string name="password">Password</string>
     <string name="email_or_user">Email</string>
     <string name="google_web_id">Google Button</string>
@@ -11,6 +11,7 @@
     <string name="email">Email</string>
     <string name="first_name">First Name</string>
     <string name="login">Login</string>
+    <string name="logout">logout</string>
     <string-array name="user_type">
         <item>Conductor</item>
         <item>Propietario De Camion</item>

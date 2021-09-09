@@ -4,10 +4,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.TruckTrip">
+        <activity
+            android:name=".mostrar_cargas"
+            android:exported="true" />
         <activity
             android:name=".TruckManager"
             android:exported="true" />
