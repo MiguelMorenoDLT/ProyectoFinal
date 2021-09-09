@@ -12,7 +12,7 @@ import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_login.cerrarButton
+import kotlinx.android.synthetic.main.activity_login.registrarButton
 
 class LoginActivity : AppCompatActivity() {
 
@@ -51,21 +51,9 @@ class LoginActivity : AppCompatActivity() {
 
         title = "Autenticación"
 
-
-        cerrarButton.setOnClickListener{
+        registrarButton.setOnClickListener{
             if (emailText.text.isNotEmpty() && passwordText.text.isNotEmpty()){
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(emailText.text.toString(), passwordText.text.toString()).addOnCompleteListener{
-                    if (it.isSuccessful){
-                        showHome(it.result?.user?.email ?: "", ProviderType.BASIC)
-                    }else{
-                        showAlert()
-                    }
-                }
-            }
-        }
-        updateButton.setOnClickListener{
-            if (emailText.text.isNotEmpty() && passwordText.text.isNotEmpty()){
-                FirebaseAuth.getInstance().signInWithEmailAndPassword(emailText.text.toString(), passwordText.text.toString()).addOnCompleteListener{
                     if (it.isSuccessful){
                         showHome(it.result?.user?.email ?: "", ProviderType.BASIC)
                     }else{

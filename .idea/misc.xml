@@ -5,10 +5,11 @@
       <map>
         <entry key="..\:/Users/mandr/AndroidStudioProjects/TruckTrip/app/src/main/res/layout/activity_driver.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/mandr/AndroidStudioProjects/TruckTrip/app/src/main/res/layout/activity_loadout.xml" value="0.35260416666666666" />
-        <entry key="..\:/Users/mandr/AndroidStudioProjects/TruckTrip/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/mandr/AndroidStudioProjects/TruckTrip/app/src/main/res/layout/activity_login.xml" value="1.0" />
         <entry key="..\:/Users/mandr/AndroidStudioProjects/TruckTrip/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/mandr/AndroidStudioProjects/TruckTrip/app/src/main/res/layout/activity_registration.xml" value="0.33" />
         <entry key="..\:/Users/mandr/AndroidStudioProjects/TruckTrip/app/src/main/res/layout/activity_truck_manager.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/mandr/AndroidStudioProjects/TruckTrip/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.22291666666666668" />
       </map>
     </option>
   </component>
