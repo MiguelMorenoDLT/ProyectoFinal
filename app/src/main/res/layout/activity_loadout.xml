@@ -56,6 +56,16 @@
                 android:text="seek tRUCK" />
         </LinearLayout>
 
+        <Button
+            android:id="@+id/createLoadButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Load" />
+
+        <Space
+        android:layout_width="match_parent"
+        android:layout_height="8dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

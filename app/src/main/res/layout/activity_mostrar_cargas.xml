@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/Cargas"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="172dp"
         android:layout_marginTop="16dp"
@@ -20,15 +20,29 @@
 
     <TextView
         android:id="@+id/Mostrar_Cargas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="348dp"
+        android:layout_height="19dp"
         android:layout_marginStart="37dp"
-        android:layout_marginTop="57dp"
-        android:layout_marginEnd="316dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="654dp"
         android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/Cargas" />
 
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="268dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="601dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Mostrar_Cargas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
