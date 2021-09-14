@@ -75,6 +75,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
+
     private fun showAlert() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Error")
