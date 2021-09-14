@@ -74,7 +74,6 @@ class RegistrationActivity : AppCompatActivity() {
                             "Address" to addressText.text.toString(),
                             "Phone" to phoneText.text.toString())
                     )
-
                 }
             }
 

@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.FirebaseAuth
@@ -101,19 +102,21 @@ class LoginActivity : AppCompatActivity() {
 
                     val intent = Intent(this, Driver::class.java)
                     startActivity(intent)
+                    Toast.makeText(this, "Login exitoso", Toast.LENGTH_SHORT).show();
 
                 }
                 if (cargo.equals("Propietario De Camion")){
 
                     val intent = Intent(this, TruckManager::class.java)
                     startActivity(intent)
+                    Toast.makeText(this, "Login exitoso", Toast.LENGTH_SHORT).show();
 
                 }
                 if (cargo.equals("Propietario De Carga")){
 
                     val intent = Intent(this, Loadout::class.java)
                     startActivity(intent)
-
+                    Toast.makeText(this, "Login exitoso", Toast.LENGTH_SHORT).show();
                 }
 
             }else{
