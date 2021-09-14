@@ -1,7 +1,9 @@
 package co.edu.unipiloto.trucktrip
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
@@ -17,25 +19,37 @@ class CreateLoad : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_load)
 
-        SaveLoadButton.setOnClickListener {
-
             val user = Firebase.auth.currentUser
             user?.let {
                 val email = user.email
                 save_load(email.toString())
             }
-        }
     }
 
     private fun save_load (email: String){
 
-
-        db.collection("Cargas").document().set(
+        SaveLoadButton.setOnClickListener {
+            val cargaIntent = Intent(this, Loadout::class.java)
+            if (email.isNotEmpty()){
+            db.collection("Cargas").document().set(
             hashMapOf(
                 "Id" to email,
                 "Name_Load" to nameLoadEditText.text.toString(),
                 "Weight_Load" to weightLoadEditText.text.toString()
+                )
             )
-        )
+                startActivity(cargaIntent)
+            }else{
+                showAlert()
+            }
+        }
+    }
+    private fun showAlert() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("Se ha producido un error de autenticación")
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 }
