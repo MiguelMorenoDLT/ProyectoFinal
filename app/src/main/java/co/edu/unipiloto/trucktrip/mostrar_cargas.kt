@@ -22,38 +22,7 @@ class mostrar_cargas : AppCompatActivity() {
         setContentView(R.layout.activity_mostrar_cargas)
 
         getAllDocuments()
-
-
-        RequeastTransportationButton.setOnClickListener() {
-
-           spinnerCarga.onItemSelectedListener = object :
-                AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    p0: AdapterView<*>?,
-                    p1: View?,
-                    p2: Int,
-                    p3: Long)
-                {
-                    val vr: String = spinnerCarga[p2].toString()
-                    println(" ESTE ES EL VALOR DEL SPINNER $vr")
-
-                    db.collection("Viajes").document().set(
-                        hashMapOf(
-                            "Name_Load" to vr,
-                            "From" to FromEditText.text.toString(),
-                            "Until" to UntilEditText.text.toString()
-                        )
-                    )
-                }
-               override fun onNothingSelected(p0: AdapterView<*>?) {
-                    TODO("Not yet implemented")
-                }
-            }
-            Toast.makeText(this, "Solicitud Realizada", Toast.LENGTH_SHORT).show();
-        }
     }
-
-
 
     private fun getAllDocuments (){
         val spinner = findViewById<Spinner>(R.id.spinnerCarga)
@@ -63,11 +32,27 @@ class mostrar_cargas : AppCompatActivity() {
             for (documento in basedatos ){
                 arr.add(documento.get("Name_Load").toString())
             }
-            /*arr.forEach{
+            arr.forEach{
                 println(it)
-            }*/
+            }
             val adaptor = ArrayAdapter(this, android.R.layout.simple_spinner_item, arr)
             spinner.adapter = adaptor
         }
+
+        RequeastTransportationButton.setOnClickListener() {
+
+                    val vr: String = spinnerCarga.selectedItem.toString()
+                    println("Esta es la posicion $vr")
+
+                    db.collection("Viajes").document().set(
+                        hashMapOf(
+                            "Name_Load" to vr,
+                            "From" to FromEditText.text.toString(),
+                            "Until" to UntilEditText.text.toString()
+                        )
+                    )
+                Toast.makeText(this, "Solicitud Realizada", Toast.LENGTH_SHORT).show();
+            }
+
+        }
     }
-}

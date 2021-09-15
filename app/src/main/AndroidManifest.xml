@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TruckTrip">
         <activity
+            android:name=".See_transports"
+            android:exported="true" />
+        <activity
             android:name=".CreateLoad"
             android:exported="true" />
         <activity

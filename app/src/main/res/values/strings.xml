@@ -14,10 +14,10 @@
     <string name="logout">logout</string>
 
     <string-array name="user_type">
-    <item>Conductor</item>
-    <item>Propietario De Camion</item>
-    <item>Propietario De Carga</item>
-</string-array>
+        <item>Conductor</item>
+        <item>Propietario De Camion</item>
+        <item>Propietario De Carga</item>
+    </string-array>
 
     <string-array name="loads">
 
