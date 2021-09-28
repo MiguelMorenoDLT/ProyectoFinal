@@ -21,6 +21,10 @@ class TruckManager : AppCompatActivity() {
             startActivity(intent)
         }
 
+        RegisterTruckButton.setOnClickListener(){
+            val intent = Intent(this, Register_Truck::class.java)
+            startActivity(intent)
+        }
 
         cerrarButton.setOnClickListener{
 

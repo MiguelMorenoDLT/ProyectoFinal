@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Cristian Duarte/AndroidStudioProjects/ProyectoFinal/app/src/main/res/layout/activity_asignar_conductor.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Cristian Duarte/AndroidStudioProjects/ProyectoFinal/app/src/main/res/layout/activity_create_load.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Cristian Duarte/AndroidStudioProjects/ProyectoFinal/app/src/main/res/layout/activity_driver.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/Cristian Duarte/AndroidStudioProjects/ProyectoFinal/app/src/main/res/layout/activity_loadout.xml" value="0.28940217391304346" />
         <entry key="..\:/Users/Cristian Duarte/AndroidStudioProjects/ProyectoFinal/app/src/main/res/layout/activity_login.xml" value="0.21467391304347827" />
         <entry key="..\:/Users/Cristian Duarte/AndroidStudioProjects/ProyectoFinal/app/src/main/res/layout/activity_mostrar_cargas.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Cristian Duarte/AndroidStudioProjects/ProyectoFinal/app/src/main/res/layout/activity_register_truck.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Cristian Duarte/AndroidStudioProjects/ProyectoFinal/app/src/main/res/layout/activity_registration.xml" value="1.0" />
         <entry key="..\:/Users/Cristian Duarte/AndroidStudioProjects/ProyectoFinal/app/src/main/res/layout/activity_see_transports.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Cristian Duarte/AndroidStudioProjects/ProyectoFinal/app/src/main/res/layout/activity_truck_manager.xml" value="0.28940217391304346" />

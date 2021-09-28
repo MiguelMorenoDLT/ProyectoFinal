@@ -8,7 +8,9 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.core.view.get
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_create_load.*
 import kotlinx.android.synthetic.main.activity_mostrar_cargas.*
 import kotlinx.android.synthetic.main.activity_registration.*
@@ -21,10 +23,14 @@ class mostrar_cargas : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mostrar_cargas)
 
-        getAllDocuments()
+        val user = Firebase.auth.currentUser
+        user?.let {
+            val email = user.email
+            getAllDocuments(email.toString())
+        }
     }
 
-    private fun getAllDocuments (){
+    private fun getAllDocuments (email: String){
         val spinner = findViewById<Spinner>(R.id.spinnerCarga)
         val arr = ArrayList<String>()
 
@@ -32,9 +38,7 @@ class mostrar_cargas : AppCompatActivity() {
             for (documento in basedatos ){
                 arr.add(documento.get("Name_Load").toString())
             }
-            arr.forEach{
-                println(it)
-            }
+
             val adaptor = ArrayAdapter(this, android.R.layout.simple_spinner_item, arr)
             spinner.adapter = adaptor
         }
@@ -42,10 +46,10 @@ class mostrar_cargas : AppCompatActivity() {
         RequeastTransportationButton.setOnClickListener() {
 
                     val vr: String = spinnerCarga.selectedItem.toString()
-                    println("Esta es la posicion $vr")
 
                     db.collection("Viajes").document().set(
                         hashMapOf(
+                            "Id" to email,
                             "Name_Load" to vr,
                             "From" to FromEditText.text.toString(),
                             "Until" to UntilEditText.text.toString()

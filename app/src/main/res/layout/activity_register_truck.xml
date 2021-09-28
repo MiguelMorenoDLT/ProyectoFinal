@@ -2,13 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/TripsButton"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TruckManager">
+    tools:context=".Register_Truck">
 
     <LinearLayout
-        android:id="@+id/firstLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -19,62 +17,61 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/truckManagerText"
+
+        <EditText
+            android:id="@+id/MarcaCamionEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="User"
-            android:inputType="text"
-            android:minHeight="48dp" />
+            android:hint="Brand Truck" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <EditText
+            android:id="@+id/ModelTruckEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Model Truck" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <EditText
+            android:id="@+id/ColorEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Color Truck" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <EditText
+            android:id="@+id/LoadingCapacityEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Loading Capacity" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="8dp" />
 
         <Button
-            android:id="@+id/tripsButton"
+            android:id="@+id/SaveTruckButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Travel and Driver" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="8dp" />
+            android:text="Save Truck" />
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
-            <Space
-                android:layout_width="8dp"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
 
-        <Button
-            android:id="@+id/RegisterTruckButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Register Truck" />
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="8dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/cerrarButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/logout" />
-
-        </LinearLayout>
 
     </LinearLayout>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

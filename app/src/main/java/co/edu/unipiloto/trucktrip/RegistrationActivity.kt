@@ -31,17 +31,14 @@ class RegistrationActivity : AppCompatActivity() {
         val provider = bundle?.getString("provider")
         setup(email ?: "", provider ?: "")
 
-
         //Guardado de datos
 
         val prefs = getSharedPreferences(getString(R.string.pr), Context.MODE_PRIVATE).edit()
         prefs.putString("email", email)
         prefs.putString("provider", provider)
         prefs.apply()
-
     }
     private fun setup(email: String, provider: String) {
-
 
         title = "Inicio"
 
@@ -76,16 +73,12 @@ class RegistrationActivity : AppCompatActivity() {
                     )
                 }
             }
-
             override fun onNothingSelected(p0: AdapterView<*>?) {
                 TODO("Not yet implemented")
             }
-
         }
-
         emailtextView.text = email
         provedortextView.text = provider
-
 
         cerrarButton.setOnClickListener{
 
@@ -96,6 +89,5 @@ class RegistrationActivity : AppCompatActivity() {
             FirebaseAuth.getInstance().signOut()
             onBackPressed()
         }
-
     }
 }
