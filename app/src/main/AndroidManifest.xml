@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TruckTrip">
         <activity
+            android:name=".TripsDriver"
+            android:exported="true" />
+        <activity
             android:name=".Asignar_Conductor"
             android:exported="true" />
         <activity

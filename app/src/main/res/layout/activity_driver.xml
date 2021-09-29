@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Loadout"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:minHeight="48dp" />
 
         <Space
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content" />
 
             <Button
-                android:id="@+id/viewTripButton"
+                android:id="@+id/TripButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="trips" />

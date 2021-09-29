@@ -1,11 +1,14 @@
 package co.edu.unipiloto.trucktrip
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_mostrar_cargas.*
+import kotlinx.android.synthetic.main.activity_register_truck.*
 import kotlinx.android.synthetic.main.activity_registration.*
 import kotlinx.android.synthetic.main.activity_see_transports.*
 
@@ -59,8 +62,46 @@ class See_transports : AppCompatActivity() {
             val carga : String
             val vr: String = SpinnerTrips.selectedItem.toString()
             carga = (vr.split(" ")[1])
-            var p : String = ""
+            var p : String = SpinnerCamion.selectedItem.toString()
+            val cam = (p.split(" ")[1])
+            val camPeso = (p.split(" ")[3]) +" "+ (p.split(" ")[4])
 
+            //Camiones
+            db.collection("Camiones").get().addOnSuccessListener { basedatos ->
+                for (documento in basedatos) {
+                    if (documento.get("Brand_Truck")?.equals(cam) == true && documento.get("Loading_Capacity")?.equals(camPeso) == true) {
+                        //pasar a otro y borrarlo
+                        db.collection("InfoCamionDriver").document().set(
+                            hashMapOf(
+                                "Id" to documento.get("Id"),
+                                "Brand_Truck" to documento.get("Brand_Truck"),
+                                "Model_Truck" to documento.get("Model_Truck"),
+                                "Color_Truck" to documento.get("Color_Truck"),
+                                "Loading_Capacity" to documento.get("Loading_Capacity"))
+                        )
+                       db.collection("Camiones").document(documento.id).delete()
+                    }
+                }
+            }
+
+            var conductor : String = SpinnerConductor.selectedItem.toString()
+
+
+            var correo : String = ""
+            var nombre = (conductor.split(" ")[0])
+            var apellido = (conductor.split(" ")[1])
+            //Usuario
+            db.collection("users").get().addOnSuccessListener { basedatos ->
+                for (documento in basedatos) {
+                    if (documento.get("Primary_Key")?.equals("Conductor") == true && documento.get("First_name")?.equals(nombre) == true
+                        && documento.get("Last_name")?.equals(apellido) == true){
+                        correo = documento.id
+                    }
+                }
+            }
+
+
+            //Viajes
             db.collection("Viajes").get().addOnSuccessListener { basedatos ->
                 for (documento in basedatos ){
 
@@ -70,13 +111,20 @@ class See_transports : AppCompatActivity() {
                                 "From" to documento.get("From"),
                                 "Until" to documento.get("Until"),
                                 "Name_Load" to documento.get("Name_Load"),
-                                "Id" to documento.get("Id")
-                            )
+                                "Id" to documento.get("Id"),
+                                "Truck" to cam,
+                                "Loading_Capacity" to camPeso,
+                                "Name_Driver" to nombre,
+                                "Last_Name_Driver" to apellido,
+                                "Email" to correo)
                         )
                         db.collection("Viajes").document(documento.id).delete()
                     }
                 }
             }
+            val intent = Intent(this, TruckManager::class.java)
+            startActivity(intent)
+            Toast.makeText(this, "Carga reservada exitosamente", Toast.LENGTH_SHORT).show();
         }
     }
 }
